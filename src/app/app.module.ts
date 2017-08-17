@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { AppRoutes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 import { SingleCompanyComponent } from './single-company/single-company.component';
 
 @NgModule({
@@ -19,10 +19,7 @@ import { SingleCompanyComponent } from './single-company/single-company.componen
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      AppRoutes,
-      { enableTracing: true }
-    ),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

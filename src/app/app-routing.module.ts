@@ -1,8 +1,9 @@
+import { NgModule }              from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CompaniesComponent, PageNotFoundComponent, SingleCompanyComponent } from './index';
 
-export const AppRoutes: Routes = [
+const appRoutes: Routes = [
   {
     path: 'companies',
     component: CompaniesComponent
@@ -21,3 +22,18 @@ export const AppRoutes: Routes = [
     component: PageNotFoundComponent
   },
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true },
+    )
+  ],
+  exports: [
+    RouterModule,
+  ],
+})
+export class AppRoutingModule {}
+
+
