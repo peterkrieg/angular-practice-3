@@ -20,7 +20,8 @@ import { SingleCompanyComponent } from './single-company/single-company.componen
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      AppRoutes
+      AppRoutes,
+      { enableTracing: true }
     ),
   ],
   providers: [],
