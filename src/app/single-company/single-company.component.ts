@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+
+
 
 @Component({
   selector: 'app-single-company',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleCompanyComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    console.log(this.route.params.value);
   }
 
 }
