@@ -9,6 +9,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { AppRoutingModule } from './app-routing.module';
 import { SingleCompanyComponent } from './single-company/single-company.component';
+import { PeopleComponent } from './people/people.component';
+import { PersonComponent } from './person/person.component';
+
+import { PeopleService } from './index';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,16 @@ import { SingleCompanyComponent } from './single-company/single-company.componen
     CompaniesComponent,
     PageNotFoundComponent,
     SingleCompanyComponent,
+    PeopleComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    PeopleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

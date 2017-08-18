@@ -1,0 +1,9 @@
+
+<h4>People for company shown below</h4>
+<ul>
+  <li *ngFor="let person of people">
+    <a [routerLink]="['people', person.id]">{{ person.name }}</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

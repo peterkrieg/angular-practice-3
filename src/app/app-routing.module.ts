@@ -1,7 +1,13 @@
-import { NgModule }              from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CompaniesComponent, PageNotFoundComponent, SingleCompanyComponent } from './index';
+import {
+  CompaniesComponent,
+  PageNotFoundComponent,
+  SingleCompanyComponent,
+  PeopleComponent,
+  PersonComponent
+} from './index';
 
 const appRoutes: Routes = [
   {
@@ -11,6 +17,18 @@ const appRoutes: Routes = [
   {
     path: 'companies/:companyid',
     component: SingleCompanyComponent,
+    children: [
+      {
+        path: '',
+        component: PeopleComponent,
+        children: [
+          {
+            path: 'people/:personid',
+            component: PersonComponent,
+          }
+        ]
+      }
+    ]
   },
   {
     path: '',
