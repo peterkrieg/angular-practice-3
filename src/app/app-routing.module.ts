@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { AuthGuard } from './auth-guard.service';
 
 import {
   CompaniesComponent,
   PageNotFoundComponent,
   SingleCompanyComponent,
   PeopleComponent,
-  PersonComponent
+  PersonComponent,
+  AdminComponent,
 } from './index';
 
 const appRoutes: Routes = [
@@ -29,6 +31,11 @@ const appRoutes: Routes = [
         ]
       }
     ]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '',

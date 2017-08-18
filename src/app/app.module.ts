@@ -13,6 +13,9 @@ import { PeopleComponent } from './people/people.component';
 import { PersonComponent } from './person/person.component';
 
 import { PeopleService } from './index';
+import { AdminComponent } from './admin/admin.component';
+
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { PeopleService } from './index';
     SingleCompanyComponent,
     PeopleComponent,
     PersonComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,7 @@ import { PeopleService } from './index';
   ],
   providers: [
     PeopleService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
