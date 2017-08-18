@@ -17,7 +17,16 @@ export class SingleCompanyComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.route.params.value);
+    // simple method, get snapshot of router - only works if component route doesn't change
+    // works perfectly in this case
+    const companyid = this.route.snapshot.paramMap.get('companyid');
+
+    // unnecessary to subscribe here, since will be new instance of component each time
+    // this.route.paramMap
+    //   .subscribe(routes => {
+    //     console.log({ routes });
+    //     console.log(routes.get('companyid'));
+    //   });
   }
 
 }
